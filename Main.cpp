@@ -36,8 +36,16 @@ public:
 		return number < other.number;
 	}
 	
-	void print_workers() const {
+	void print_workers_name() const {
 		std::cout << name << " " << surname << " " << number << "\n";
+	};
+
+	void print_workers_surname() const {
+		std::cout << surname << name << " "  << " " << number << "\n";
+	};
+
+	void print_workers_numbers() const {
+		std::cout << number << surname << " " << name << " "  << "\n";
 	};
 };
 
@@ -74,21 +82,21 @@ int main() {
 		case 1: {
 			std::sort(managers.begin(), managers.end(), Names);
 			for (const auto& Worker : managers) {
-				Worker.print_workers();
+				Worker.print_workers_name();
 			}
 			break;
 			}
 		case 2: {
 			std::sort(managers.begin(), managers.end(), Surnames);
 			for (const auto& Worker : managers) {
-				Worker.print_workers();
+				Worker.print_workers_surname();
 			}
 			break;
 			}
 		case 3:{
 			std::sort(managers.begin(), managers.end(), Numbers);
 			for (const auto& Worker : managers) {
-				Worker.print_workers();
+				Worker.print_workers_numbers();
 			}
 			break;
 			}
